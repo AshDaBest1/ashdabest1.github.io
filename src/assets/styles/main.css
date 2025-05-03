@@ -483,11 +483,15 @@ h4 {
 
 .comics .comic {
     width: 100%;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0 auto;
+    gap: 10px;
+}
+
+.comics img {
+    width: 100%;
 }
 
 .comics .comic p {
