@@ -2,7 +2,7 @@ import React from 'react';
 // import learningStyleVisual from '../assets/images/learning-style-visual.png';
 import goodCommsComic from '../assets/images/good-comms-comic.png';
 import poorCommsComic from '../assets/images/poor-comms-comic.png';
-import BigFivePersonalityTest from "../assets/documents/My results from the BigFive personality test - Free open-source BigFive personality traits test.pdf"
+import BigFivePersonalityTest from "../assets/documents/BigFive Personality test.pdf"
 import HowCompanyHiers from "../assets/documents/How a Comapny Hires Assginment.pdf"
 import JobAvertisments from "../assets/documents/Job Advertisments Assginment.pdf"
 
