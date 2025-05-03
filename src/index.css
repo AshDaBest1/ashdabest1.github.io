@@ -1,0 +1,490 @@
+/* Base Styles */
+:root {
+  --primary-color: #5EBEC6;
+  --primary-dark: #3a939b;
+  --secondary-color: #252F3F;
+  --accent-color: #F92C85;
+  --light-color: #FDF5F0;
+  --dark-color: #1A1A2E;
+  --text-color: #333333;
+  --text-light: #6D6D6D;
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-color);
+  padding-top: 400px; /* Space for fixed header and navbar */
+}
+
+/* Layout Structure */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header Styles */
+.app-header {
+  background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
+  color: white;
+  padding: 2rem 0 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  height: 300px;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+  text-align: center;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+  margin: 0.5rem 0 0;
+  font-weight: 300;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.header-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.header-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 100px;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 300px;
+  z-index: 99;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.nav-text {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-dot {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border-radius: 50%;
+  margin-top: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+.nav-link.active .nav-dot {
+  background: var(--primary-color);
+}
+
+.nav-link:hover .nav-dot {
+  background: var(--primary-color);
+  opacity: 0.5;
+}
+
+/* Section Styles */
+section {
+  scroll-margin-top: 120px;
+}
+
+.section {
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  max-width: 1000px;
+}
+
+.section h2 {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 3rem 2rem;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.hero-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  color: white;
+}
+
+.headshot {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+}
+
+/* Card Styles */
+.skill-card,
+.document-card,
+.portfolio-item,
+.experience-item,
+.education-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1.8rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.skill-card {
+  border-left: 4px solid var(--primary-color);
+}
+
+.skill-card:hover,
+.document-card:hover,
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(94, 190, 198, 0.3);
+}
+
+/* Skills Section */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Portfolio Section */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.category {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Education Timeline */
+.education-timeline {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.education-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-left: 2px solid var(--primary-color);
+  padding-left: 2rem;
+}
+
+.education-item::before {
+  content: '';
+  position: absolute;
+  left: -0.7rem;
+  top: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--primary-color);
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.education-year {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.education-honors ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+/* Work Experience */
+.experience-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.company-name {
+  margin: 0 1rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.job-duration {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.responsibilities {
+  padding-left: 1.5rem;
+}
+
+.skills-gained {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  background-color: rgba(94, 190, 198, 0.1);
+  color: var(--primary-dark);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(94, 190, 198, 0.3);
+}
+
+.work-reflection {
+  background-color: var(--light-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 3rem;
+}
+
+/* Contact Form */
+.contact-form {
+  margin-top: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  min-height: 150px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(94, 190, 198, 0.2);
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(94, 190, 198, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding-top: 350px;
+  }
+
+  .app-header {
+    height: 250px;
+  }
+
+  .navbar {
+    top: 250px;
+  }
+
+  .header-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    margin-bottom: 2rem;
+  }
+
+  .headshot {
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: 1.5rem;
+  }
+
+  .nav-links {
+    gap: 0.25rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 300px;
+  }
+
+  .app-header {
+    height: 200px;
+    padding: 1rem 0 0;
+  }
+
+  .navbar {
+    top: 200px;
+    padding: 0.5rem 1rem;
+  }
+
+  .header-title {
+    font-size: 1.8rem;
+  }
+
+  .header-subtitle {
+    font-size: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+}
